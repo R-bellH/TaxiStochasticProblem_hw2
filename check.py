@@ -269,13 +269,17 @@ def main():
     main function
     """
     print(f"IDS: {ids}")
-    for an_input in small_inputs:
+    for i, an_input in enumerate(small_inputs):
+        print(f"-----------------------------------")
+        print(f"Problem {i + 1}:")
         try:
             my_problem = TaxiStochasticProblem(an_input)
             my_problem.run_round()
         except EndOfGame:
             continue
-    for an_input in additional_inputs:
+    for i,an_input in enumerate(additional_inputs):
+        print(f"-----------------------------------")
+        print(f"Problem {i + 1}:")
         try:
             my_problem = TaxiStochasticProblem(an_input)
             my_problem.run_round()
