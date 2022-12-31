@@ -391,7 +391,6 @@ class TaxiAgent:
         self.actions = self.create_all_actions()
         self.Q=defaultdict(lambda: 0)
         self.Q = self.monte_carlo(initial, None, 0)
-
         while time.time()-self.start_time < 30:
             # give the best 5 states from Q
             best_Qs = sorted(self.Q, key=self.Q.get, reverse=True)[:5]
